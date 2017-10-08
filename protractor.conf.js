@@ -6,23 +6,47 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
-    './e2e/**/*.e2e-spec.ts'
+    './e2e/**/*.e2e.mocha.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'safari'
   },
-  directConnect: true,
+  directConnect: false,
   baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
-  jasmineNodeOpts: {
-    showColors: true,
-    defaultTimeoutInterval: 30000,
-    print: function() {}
+
+  multiCapabilities: [
+  {'browserName': 'chrome'}, 
+  {'browserName': 'safari'}
+  ],
+  //maxSessions: 1,
+
+
+  // framework: 'jasmine',
+  // jasmineNodeOpts: {
+  //   showColors: true,
+  //   defaultTimeoutInterval: 30000,
+  //   print: function() {}
+  // },
+  
+  //framework: 'mocha',
+  mochaOpts: {
+    reporter: "spec",
+    slow: 3000,
+    timeout: 30000
   },
+   beforeLaunch: function() { 
+  },
+
+
+
+
+
+
+
   onPrepare() {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    //jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   }
 };
