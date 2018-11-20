@@ -1,5 +1,7 @@
 # GrocerybotCli
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9dde15c3ff748cf8fe28cd3b03c7d68)](https://app.codacy.com/app/ugobriasco/grocerybot-client?utm_source=github.com&utm_medium=referral&utm_content=ugobriasco/grocerybot-client&utm_campaign=Badge_Grade_Dashboard)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
 
 ## Development server
